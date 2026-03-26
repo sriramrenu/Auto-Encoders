@@ -1,3 +1,14 @@
+---
+title: Autoencoders
+emoji: 🛡️
+colorFrom: cyan
+colorTo: pink
+sdk: gradio
+sdk_version: 4.19.2
+app_file: app.py
+pinned: false
+---
+
 # Multi-Domain Anomaly Detection Platform 🏆
 **An Intelligent Suite for Finance, Healthcare, and Cybersecurity**
 
