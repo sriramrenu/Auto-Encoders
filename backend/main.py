@@ -11,13 +11,9 @@ app = FastAPI(title="Multi-Domain AE Platform Backend")
 # Allowing CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://auto-encoders-frontend.vercel.app",
-        "http://localhost:5173",
-        "http://localhost:3000"
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
