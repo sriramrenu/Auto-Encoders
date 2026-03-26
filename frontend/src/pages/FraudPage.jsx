@@ -13,8 +13,8 @@ export default function FraudPage() {
     setLoading(true);
     setResult(null);
     try {
+      const apiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
       const parsedData = data.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
       const res = await axios.post(`${apiUrl}/api/analyze`, {
         domain: 'fraud',
         data: parsedData

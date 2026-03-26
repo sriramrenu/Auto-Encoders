@@ -17,7 +17,7 @@ export default function ImagePage() {
       formData.append('file', file);
       formData.append('domain', 'image');
 
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      let apiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
       const res = await axios.post(`${apiUrl}/api/analyze/file`, formData);
       setResult(res.data);
     } catch (e) {
