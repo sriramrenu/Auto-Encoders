@@ -17,6 +17,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def root():
+    return {
+        "status": "online",
+        "platform": "Multi-Domain Anomaly Detection",
+        "engine": "Hybrid Proxy Core",
+        "endpoints": ["/api/analyze", "/api/analyze/file"]
+    }
+
+@app.get("/api/health")
+async def health():
+    return {"status": "healthy", "hf_proxy": "connected" if get_hf_client() else "disconnected"}
+
 class AnalyzeRequest(BaseModel):
     domain: str
     data: list[float]
