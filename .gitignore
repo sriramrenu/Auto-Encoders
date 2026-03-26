@@ -8,8 +8,10 @@ venv/
 ENV/
 build/
 dist/
-*.pth
-*.pkl
+# *.pth
+# *.pkl
+!models/**/*.pth
+!models/**/*.pkl
 
 # Node / React
 node_modules/
