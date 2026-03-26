@@ -14,7 +14,8 @@ export default function NetworkPage() {
     setResult(null);
     try {
       const parsedData = data.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
-      const res = await axios.post('http://localhost:8000/api/analyze', {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      const res = await axios.post(`${apiUrl}/api/analyze`, {
         domain: 'network',
         data: parsedData
       });

@@ -17,7 +17,8 @@ export default function ImagePage() {
       formData.append('file', file);
       formData.append('domain', 'image');
 
-      const res = await axios.post('http://localhost:8000/api/analyze/file', formData);
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      const res = await axios.post(`${apiUrl}/api/analyze/file`, formData);
       setResult(res.data);
     } catch (e) {
       setResult({ error: e.message || 'Failed to analyze image' });
