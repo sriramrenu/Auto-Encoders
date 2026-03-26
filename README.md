@@ -1,7 +1,7 @@
 ---
 title: Autoencoders
 emoji: 🛡️
-colorFrom: cyan
+colorFrom: blue
 colorTo: pink
 sdk: gradio
 sdk_version: 4.19.2
