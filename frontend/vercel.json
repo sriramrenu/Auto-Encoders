@@ -1,6 +1,0 @@
-{
-  "rewrite": [
-    { "source": "/api/(.*)", "destination": "YOUR_BACKEND_URL/api/$1" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
